@@ -1,0 +1,1 @@
+from happyfoodhole import app
