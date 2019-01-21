@@ -32,9 +32,10 @@ body {
   font-family: 'Webly Sleek UIS';
 }
 .jumbotron {
-  background-image: url(https://d27v8envyltg3v.cloudfront.net/bg/7939217/14221474025939/bg_blur.jpg);
+  background-image: url('/images/stock/sandwich-bite.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto 100%;
+  background-color: #f5f5f5;
 }
 .jumbotron .logo-row {
   display: flex;
@@ -49,7 +50,7 @@ body {
 }
 .jumbotron .logo-cell {
   justify-content: flex-end;
-  display: flex;
+  display: none;
 }
 .medium-editor-placeholder:after {
   color: #aaa;
