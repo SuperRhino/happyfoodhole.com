@@ -17,3 +17,7 @@
 1. `gulp --production`
 2. commit + push
 3. pull on superrhino
+
+### Connect to DB
+
+1. on superrhino: `sudo mysql -u <dbuser> -p`
