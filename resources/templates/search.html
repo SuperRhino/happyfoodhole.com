@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="">
+{% include "_includes/head.html" %}
+<body>
+    {% include "_includes/navbar.html" %}
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron"></div>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 class="page-header">{{ data.searchTerm }}
+                    <small>Search Results</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+
+          <div class="col-xs-12 col-md-8">
+            <div class="row">
+              <!-- Blog Search Well -->
+              {% include "_blog/search.html" %}
+            </div>
+            <!-- Pages Row -->
+            {% for row in data.pages|batch(2) %}
+            <div class="row">
+              {% for page in row %}
+              <div class="col-xs-12 col-sm-6 portfolio-item">
+                {% if page.preview_image %}
+                {% if page.uri %}
+                <a href="/{{ page.uri }}">
+                  <img src="{{ page.preview_image }}" alt="{{ page.meta_title }}" class="img-responsive" />
+                </a>
+                {% else %}
+                <img src="{{ page.preview_image }}" alt="{{ page.meta_title }}" class="img-responsive" />
+                {% endif %}
+                {% endif %}
+
+                {% if page.uri %}
+                <h3><a href="/{{ page.uri }}">{{ page.title }}</a></h3>
+                {% else %}
+                <h3>{{ page.title }}</h3>
+                {% endif %}
+
+                <p><em>{{ page.updated_date is empty ? page.post_date|date("M j, Y") : page.updated_date|date("M j, Y") }}</em></p>
+                <p>{{ page.meta_description }}</p>
+              </div>
+              {% endfor %}
+            </div>
+            <!-- /.row -->
+            {% endfor %}
+
+            {% if data.pages is empty %}
+            <div class="row">
+              <div class="col-xs-12 col-md-8">
+                {% if data.searchTerm %}
+                <h4>No results for {{ data.searchTerm }} :(</h4>
+                {% endif %}
+              </div>
+            </div>
+            {% endif %}
+          </div>
+
+          <!-- Blog Sidebar Widgets Column -->
+          <div class="col-xs-12 col-md-4">
+              <!-- Blog Categories Well -->
+              {% include "_blog/categories.html" %}
+              <!-- Signup Button + Modal -->
+              {% include "_blog/subscribe-button.html" %}
+              <!-- Side Well Logo -->
+              {% include "_blog/side-logo.html" %}
+          </div>
+        </div>
+
+        {% include "_includes/footer.html" %}
+    </div>
+    <!-- /.container -->
+
+    {% include "_includes/scripts.html" %}
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+ @font-face {
+   font-family: 'Webly Sleek UIS';
+   src: url('../fonts/WeblySleek_UI_Semibold/weblysleekuisb.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url('../fonts/WeblySleek_UI_Semibold/weblysleekuisb.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+ }
+ @font-face {
+   font-family: 'Webly Sleek SL';
+   src: url('../fonts/WeblySleek_UI_Semilight/weblysleekuisl.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url('../fonts/WeblySleek_UI_Semilight/weblysleekuisl.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+ }
+ @font-face {
+   font-family: 'Webly Sleek';
+   src: url('../fonts/weblysleek_ui/weblysleekuil.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url('../fonts/weblysleek_ui/weblysleekuil.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+ }
+
+ body {
+     padding-top: 50px;
+     padding-bottom: 20px;
+     font-family: 'Webly Sleek SL';
+     font-size: 16px;
+ }
+
+ .font-light { font-family: 'Webly Sleek SL'}
+ .font-regular { font-family: 'Webly Sleek'}
+ .font-heavy { font-family: 'Webly Sleek UIS'}
+
+ // .img-logo { max-height: 169px; }
+
+.jumbotron {
+    background-image: url(https://d27v8envyltg3v.cloudfront.net/bg/7939217/14221474025939/bg_blur.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron .logo-row {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: center;
+
+  background-color: rgba(255,255,255,.35);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.jumbotron .logo-cell {
+  justify-content: flex-end;
+  display: flex;
+}
+
+.medium-editor-placeholder:after {
+  color: #aaa;
+  font-style: normal;
+}
+
+.jumbotron .dz-message {
+  margin: 0;
+}
+
+#btn-subscribe { margin-bottom: 20px; }

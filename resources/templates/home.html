@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="">
+{% include "_includes/head.html" %}
+<body>
+    {% include "_includes/navbar.html" %}
+    {% include "_includes/jumbotron.html" %}
+
+    <div class="container">
+      {% for row in data.pages|batch(3) %}
+        <div class="row">
+          {% for page in row %}
+          <div class="col-sm-4">
+            {% if page.preview_image %}
+            {% if page.uri %}
+            <a href="{{ page.uri }}">
+              <img src="{{ page.preview_image }}" alt="{{ page.meta_title }}" class="img-responsive" />
+            </a>
+            {% else %}
+            <img src="{{ page.preview_image }}" alt="{{ page.meta_title }}" class="img-responsive" />
+            {% endif %}
+            {% endif %}
+
+            {% if page.uri %}
+            <h2><a href="{{ page.uri }}">{{ page.title }}</a></h2>
+            {% else %}
+            <h2>{{ page.title }}</h2>
+            {% endif %}
+
+            <p><em>{{ page.updated_date is empty ? page.post_date|date("M j, Y") : page.updated_date|date("M j, Y") }}</em></p>
+            <p>{{ page.meta_description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h5><a href="/view-all" class="btn btn-primary btn-block btn-lg">View All &rarr;</a></h5>
+        </div>
+      </div>
+
+      {% include "_includes/footer.html" %}
+    </div>
+
+    {% include "_includes/scripts.html" %}
+</body>
+</html>

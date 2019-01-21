@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="">
+{% include "_includes/head.html" %}
+<body>
+    {% include "_includes/navbar.html" %}
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron"></div>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-xs-12 col-md-8">
+
+                <!-- Blog Post -->
+
+                <!-- Title -->
+                <h1>{{ data.page.title }}</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#">{{ data.page.author_id == 1 ? "Ryan" : "Shayna" }} </a>
+                    {% if data.page.category %}
+                    in <a href="/category/{{ data.page.category|url_encode }}">{{ data.page.category }}</a>
+                    {% endif %}
+                </p>
+
+                <hr>
+
+                {% if data.page.reading_time >= 5 %}
+                <!-- Reading Time -->
+                <p class="pull-right">
+                  <div class="pull-right">
+                    <span class="glyphicon glyphicon-time"></span>&nbsp;
+                    <em>about {{ data.page.reading_time }} mins read</em>
+                  </div>
+                </p>
+                {% endif %}
+
+                <!-- Date/Time -->
+                <p><span class="glyphicon glyphicon-calendar"></span> {{ data.page.updated_date is empty ? data.page.post_date|date("M j, Y") : data.page.updated_date|date("M j, Y") }}</p>
+
+                <hr>
+
+                <!-- Post Content -->
+                {{ data.page.article|raw }}
+
+                <!-- FB Like Button -->
+                <div class="fb-like" data-href="http://happyfoodhole.com/{{ data.page.uri }}" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+                <hr>
+
+                <!-- Blog Comments -->
+                <div class="fb-comments" data-href="http://happyfoodhole.com/{{ data.page.uri }}" data-numposts="10" width="100%"></div>
+
+                <!-- Comments Form -->
+                {# {% include "_blog/comments-form.html" %} #}
+
+                <!-- Posted Comments -->
+                {# {% include "_blog/comments.html" %} #}
+
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-xs-12 col-md-4">
+
+                <!-- Blog Search Well -->
+                {% include "_blog/search.html" %}
+
+                <!-- Blog Categories Well -->
+                {% include "_blog/categories.html" %}
+
+                <!-- Signup Button + Modal -->
+                {% include "_blog/subscribe-button.html" %}
+
+                <!-- Side Widget Well -->
+                {# {% include "_blog/side-well.html" %} #}
+
+                <!-- Side Well Logo -->
+                {% include "_blog/side-logo.html" %}
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        {% include "_includes/footer.html" %}
+    </div>
+    <!-- /.container -->
+
+    {% include "_includes/scripts.html" %}
+    {% include "_includes/fb-sdk.html" %}
+</body>
+</html>

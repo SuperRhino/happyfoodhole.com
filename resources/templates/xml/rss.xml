@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <atom:link href="{{ meta.url }}rss" rel="self" type="application/rss+xml" />
+    <title>{{ meta.title }}</title>
+    <link>{{ meta.url }}</link>
+    <description>{{ meta.description }}</description>
+    <image>
+      <url>{{ meta.url }}images/LOGO.png</url>
+      <title>{{ meta.title }}</title>
+      <link>{{ meta.url }}</link>
+    </image>
+    <language>en-US</language>
+    <copyright>Copyright {{ "now"|date("Y") }}, {{ meta.title }}</copyright>
+    <ttl>1440</ttl>
+    <lastBuildDate>{{ data.lastmod }}</lastBuildDate>
+{% for page in data.pages %}
+    <item>
+      <guid>{{ meta.url }}{{ page.uri }}</guid>
+      <title>{{ page.meta_title }}</title>
+      <link>{{ meta.url }}{{ page.uri }}</link>
+      <description>{{ page.meta_description }}</description>
+      {% if page.preview_image %}
+      <enclosure url="{{ page.preview_image }}" length="{{ page.preview_image_size }}" type="{{ page.preview_image_type }}"/>
+      {% endif %}
+      <pubDate>{{ page.post_date|date("r") }}</pubDate>
+{% if page.category %}
+      <category>{{ page.category }}</category>
+{% endif %}
+    </item>
+{% endfor %}
+  </channel>
+</rss>

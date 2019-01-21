@@ -1,0 +1,19 @@
+{
+  "name": "happyfoodhole.com",
+  "version": "1.0.0",
+  "authors": [
+    "Cle Food Bloggers"
+  ],
+  "copyright": "Cle Food Bloggers",
+  "description": "happyfoodhole.com website",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}

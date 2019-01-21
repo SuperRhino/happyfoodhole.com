@@ -1,0 +1,57 @@
+{
+  "name": "happyfoodhole.com",
+  "version": "1.0.0",
+  "description": "## Environment Setup",
+  "main": "js/bundle.js",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "dropzone": "^4.2.0",
+    "humane-js": "^3.2.2",
+    "jquery": "^2.2.0",
+    "keymirror": "^0.1.1",
+    "moment": "^2.11.2",
+    "react": "^0.14.7",
+    "react-bootstrap-datetimepicker": "0.0.22",
+    "react-dom": "^0.14.7",
+    "react-medium-editor": "^1.6.2",
+    "reflux": "^0.3.0",
+    "superagent": "^1.7.2"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.1.4",
+    "babel-preset-es2015": "^6.1.4",
+    "babel-preset-react": "^6.1.4",
+    "babel-preset-stage-1": "^6.1.2",
+    "babelify": "^7.2.0",
+    "bower-resolve": "^2.2.1",
+    "browserify": "^12.0.1",
+    "glob": "^6.0.1",
+    "gulp": "^3.9.0",
+    "gulp-if": "^2.0.0",
+    "gulp-importify": "0.0.5",
+    "gulp-less": "^3.0.3",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "resolve": "^1.1.6",
+    "run-sequence": "^1.1.4",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.6.0",
+    "yargs": "^3.29.0"
+  },
+  "scripts": {
+    "start": "php -S localhost:8080 -t public/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuperRhino/happyfoodhole.com.git"
+  },
+  "author": "Ryan Pastorelle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuperRhino/happyfoodhole.com/issues"
+  },
+  "homepage": "https://github.com/SuperRhino/happyfoodhole.com#readme"
+}
